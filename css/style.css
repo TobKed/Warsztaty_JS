@@ -47,7 +47,7 @@ nav {
 }
 
 .dropdown {
-  display: block;
+  display: none;
   background-color: #fff;
   border-radius: 0 .0 .5rem .5rem;
   position: absolute;
@@ -60,6 +60,7 @@ nav {
 .dropdown ul {
   list-style: none;
   padding: 0;
+
 }
 
 .dropdown li a {
@@ -98,7 +99,7 @@ nav {
   text-transform: uppercase;
   font-size: 1.5rem;
   text-decoration: none;
-  margin-top: 3rem;
+  margin-top: 12rem;
   border: none;
   box-shadow: .2rem .2rem .2rem #7f7f7f;
 }
@@ -181,7 +182,7 @@ nav {
 .plan-description {
   height: 70rem;
   margin-top: 4rem;
-
+  font-weight: bold;
 }
 
 .plan-description h3 {
