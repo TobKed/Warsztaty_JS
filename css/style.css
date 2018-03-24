@@ -276,6 +276,14 @@ nav {
   list-style: none;
 }
 
+.org {
+    display: none;
+    /* color: pink; */
+}
+.visible {
+    display: inline-block;
+}
+
 .dot {
   display: inline-block;
   margin-right: 1rem;
@@ -304,4 +312,12 @@ footer p {
   font-size: 1.2rem;
   color: #424343;
   margin-top: 3rem;
+}
+
+.bottomright {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2%;
+    margin: 2%;
+    right: 0;
 }

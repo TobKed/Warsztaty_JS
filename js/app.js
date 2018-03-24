@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {  // console.log('dzia
     forDropdown.addEventListener('mouseover', function() {
         dropdown.style.display = 'block';
         // set width of dropdown menu due to parrent button
-        dropdown.style.width = String(forDropdown.offsetWidth) + 'px';
+        dropdown.style.width = forDropdown.offsetWidth + 'px';
     });
 
     forDropdown.addEventListener('mouseout', function() {
@@ -41,10 +41,52 @@ document.addEventListener('DOMContentLoaded', function() {  // console.log('dzia
     }
 
 
-    // HEADER FIX
+    // HEADER FIX GO UP BUTTON
     var menu = document.querySelector(".navbar");
+    var goUpButton =document.querySelector("#go-up-btn")
+    goUpButton.style.display = 'none';
     window.addEventListener('scroll', function() {
+        goUpButton.style.display = 'inline-block';
         menu.style.borderBottom = '1px solid #7f7f7f';
     });
+
+    goUpButton.addEventListener("click", function() {
+        window.scroll(0, 0);
+    });
+
+
+    // SLDIER
+    var items = document.querySelectorAll('.slider li');
+    var dots = document.querySelectorAll('.dot');
+    for (var i = 1; i < items.length; i++) {
+        dots[i].classList.remove('active');
+        items[i].classList.remove('visible');
+    }
+
+    // attach event listener to dots
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].onclick = function() {
+            displayItem(this);
+            return false;
+        }
+        dots[i].onfocus = function() {
+            displayItem(this);
+            return false;
+        }
+    }
+
+    // display adequate item
+    function displayItem(itemToActivate) {
+        for (var i = 0; i < dots.length; i++) {
+            if (dots[i] == itemToActivate) {
+                dots[i].classList.add("active");
+                items[i].classList.add("visible");
+            } else {
+                dots[i].classList.remove("active");
+                items[i].classList.remove("visible");
+            }
+    	}
+    }
+
 
 });
