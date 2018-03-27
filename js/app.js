@@ -89,4 +89,23 @@ document.addEventListener('DOMContentLoaded', function() {  // console.log('dzia
     }
 
 
+    // TASKS LIST
+    var addToListButton = document.querySelector('.input-group-btn');
+    var tasksList = document.querySelector('.list-group');
+    var newTaskInput = document.querySelector('.form-control');
+    var newTask = document.createElement('li');
+
+    addToListButton.addEventListener('click', addTask);
+
+    function addTask() {
+
+        console.log(newTask);
+        tasksList.appendChild(newTask);
+        newTask.innerHTML = newTaskInput.value;
+        newTaskInput.value = '';
+        console.log(tasksList);
+        tasksList = document.querySelector('.list-group');
+
+    };
+
 });
