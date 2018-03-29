@@ -239,6 +239,24 @@ nav {
   color: #fff;
 }
 
+.delete-btn {
+  display: inline-block;1
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #3184e0;
+  float: right;
+}
+
+.delete-btn:hover,
+.delete-btn:active {
+  color: #fff;
+}
+
+.task {
+  display: inline-block;
+}
+
 .orgs h3 {
   font-size: 4rem;
   font-weight: 600;

@@ -92,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {  // console.log('dzia
     // TASKS LIST
     var addToListButton = document.querySelector('.input-group-btn');
 
-    addToListButton.addEventListener('click', addTask);
+    // addToListButton.addEventListener('click', addTask);
+    addToListButton.addEventListener('click', addTaskWithDeleteButton);
 
     function addTask() {
         var tasksList = document.querySelector('.list-group');
@@ -101,8 +102,30 @@ document.addEventListener('DOMContentLoaded', function() {  // console.log('dzia
         newTask.innerHTML = newTaskInput.value;
         newTaskInput.value = '';
         tasksList.appendChild(newTask);
-        // tasksList = document.querySelector('.list-group');
+    }
 
-    };
+
+
+    function addTaskWithDeleteButton() {
+        var tasksList = document.querySelector('.list-group');
+        var newTaskInput = document.querySelector('.form-control');
+        var newTask = document.createElement('li');
+        var newTaskContent = document.createElement('div')
+        var deleteTaskButton = document.createElement('button');
+        deleteTaskButton.innerHTML = 'Usuń';
+        deleteTaskButton.classList.add('btn', 'delete-btn');
+        newTaskContent.classList.add('task');
+        newTaskContent.innerHTML = newTaskInput.value;
+        newTask.appendChild(newTaskContent);
+        newTask.appendChild(deleteTaskButton);
+        newTask.style.overflow = "hidden";
+        newTaskInput.value = '';
+        tasksList.appendChild(newTask);
+        deleteTaskButton.addEventListener('click', deleteTask);
+    }
+
+    function deleteTask() {
+        this.parentElement.parentNode.removeChild(this.parentElement);
+    }
 
 });
